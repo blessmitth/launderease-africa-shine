@@ -26,12 +26,15 @@ const Header = () => {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
-            <img 
-              src="/lovable-uploads/bd8afb50-d00b-4315-a176-dc542d768f89.png" 
-              alt="LaunderEase Logo" 
-              className="h-10 w-10"
-            />
+          <Link to="/" className="flex items-center space-x-3 group">
+            <div className="relative">
+              <img 
+                src="/lovable-uploads/bd8afb50-d00b-4315-a176-dc542d768f89.png" 
+                alt="LaunderEase Logo" 
+                className="h-12 w-12 rounded-full border-2 border-primary/20 shadow-lg animate-logo-float group-hover:animate-logo-spin transition-all duration-300"
+              />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/10 to-accent/10 animate-pulse"></div>
+            </div>
             <div>
               <h1 className="text-xl font-bold text-primary">LaunderEase</h1>
               <p className="text-xs text-muted-foreground">Empowering African Laundry Businesses Online</p>
