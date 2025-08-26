@@ -113,6 +113,36 @@ export default {
 				'spin-slow': {
 					'0%': { transform: 'rotate(0deg)' },
 					'100%': { transform: 'rotate(360deg)' }
+				},
+				'float-up': {
+					'0%': { transform: 'translateY(0) rotate(0deg)', opacity: '0.1' },
+					'50%': { opacity: '0.3' },
+					'100%': { transform: 'translateY(-100vh) rotate(360deg)', opacity: '0' }
+				},
+				'float-down': {
+					'0%': { transform: 'translateY(0) rotate(0deg)', opacity: '0.1' },
+					'50%': { opacity: '0.3' },
+					'100%': { transform: 'translateY(100vh) rotate(-360deg)', opacity: '0' }
+				},
+				'float-left': {
+					'0%': { transform: 'translateX(0) rotate(0deg)', opacity: '0.1' },
+					'50%': { opacity: '0.3' },
+					'100%': { transform: 'translateX(-100vw) rotate(360deg)', opacity: '0' }
+				},
+				'float-right': {
+					'0%': { transform: 'translateX(0) rotate(0deg)', opacity: '0.1' },
+					'50%': { opacity: '0.3' },
+					'100%': { transform: 'translateX(100vw) rotate(-360deg)', opacity: '0' }
+				},
+				'float-diagonal-up': {
+					'0%': { transform: 'translate(0, 0) rotate(0deg)', opacity: '0.1' },
+					'50%': { opacity: '0.3' },
+					'100%': { transform: 'translate(100vw, -100vh) rotate(360deg)', opacity: '0' }
+				},
+				'float-diagonal-down': {
+					'0%': { transform: 'translate(0, 0) rotate(0deg)', opacity: '0.1' },
+					'50%': { opacity: '0.3' },
+					'100%': { transform: 'translate(-100vw, 100vh) rotate(-360deg)', opacity: '0' }
 				}
 			},
 			animation: {
@@ -124,7 +154,13 @@ export default {
 				'logo-float': 'logo-float 3s ease-in-out infinite',
 				'logo-spin': 'logo-spin 0.6s ease-in-out',
 				'logo-bounce': 'logo-bounce 0.5s ease-in-out',
-				'spin-slow': 'spin-slow 8s linear infinite'
+				'spin-slow': 'spin-slow 8s linear infinite',
+				'float-up': 'float-up 15s linear infinite',
+				'float-down': 'float-down 20s linear infinite',
+				'float-left': 'float-left 18s linear infinite',
+				'float-right': 'float-right 22s linear infinite',
+				'float-diagonal-up': 'float-diagonal-up 25s linear infinite',
+				'float-diagonal-down': 'float-diagonal-down 28s linear infinite'
 			}
 		}
 	},

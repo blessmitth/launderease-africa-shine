@@ -201,3 +201,40 @@ All colors MUST be HSL.
     transform: translateX(0);
   }
 }
+
+/* Floating logo background animations */
+@keyframes float-up {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.1; }
+  50% { opacity: 0.3; }
+  100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes float-down {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.1; }
+  50% { opacity: 0.3; }
+  100% { transform: translateY(100vh) rotate(-360deg); opacity: 0; }
+}
+
+@keyframes float-left {
+  0% { transform: translateX(0) rotate(0deg); opacity: 0.1; }
+  50% { opacity: 0.3; }
+  100% { transform: translateX(-100vw) rotate(360deg); opacity: 0; }
+}
+
+@keyframes float-right {
+  0% { transform: translateX(0) rotate(0deg); opacity: 0.1; }
+  50% { opacity: 0.3; }
+  100% { transform: translateX(100vw) rotate(-360deg); opacity: 0; }
+}
+
+@keyframes float-diagonal-up {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 0.1; }
+  50% { opacity: 0.3; }
+  100% { transform: translate(100vw, -100vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes float-diagonal-down {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 0.1; }
+  50% { opacity: 0.3; }
+  100% { transform: translate(-100vw, 100vh) rotate(-360deg); opacity: 0; }
+}

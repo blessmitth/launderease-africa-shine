@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import FloatingLogo from "@/components/FloatingLogo";
+import FloatingBackgroundLogos from "@/components/FloatingBackgroundLogos";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import CaseStudies from "./pages/CaseStudies";
@@ -19,6 +20,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <FloatingBackgroundLogos />
         <FloatingLogo />
         <Routes>
           <Route path="/" element={<Index />} />

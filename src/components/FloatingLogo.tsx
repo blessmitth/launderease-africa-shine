@@ -35,7 +35,7 @@ const FloatingLogo = () => {
     setIsTransitioning(true);
     setTimeout(() => {
       setIsTransitioning(false);
-    }, 800);
+    }, 1200);
   };
 
   if (!isVisible) return null;
@@ -51,9 +51,9 @@ const FloatingLogo = () => {
         onClick={(e) => handleLogoClick(e, "/")}
         className="block group"
       >
-        <div className={`relative transition-all duration-700 ${
+        <div className={`relative transition-all duration-1000 ${
           isTransitioning 
-            ? 'scale-150 rotate-[360deg] opacity-80' 
+            ? 'scale-[2] rotate-[720deg] opacity-90 animate-pulse' 
             : 'scale-100 rotate-0 hover:scale-110 hover:rotate-12'
         }`}>
           <img 
