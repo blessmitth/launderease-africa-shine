@@ -25,21 +25,40 @@ const Index = () => {
       subheadline: "We help you get found by customers across Africa.",
       ctaText: "See Our Services",
       ctaLink: "/services",
-      bgGradient: "bg-gradient-to-br from-primary via-primary-light to-accent"
+      bgImage: "/lovable-uploads/4851d1bc-c07b-4bbb-a9bc-d886ba773967.png",
+      bgGradient: "bg-gradient-to-br from-primary/80 via-primary-light/80 to-accent/80"
     },
     {
       headline: "A Professional Website That Attracts Clients.",
       subheadline: "From simple landing pages to full booking systems.",
       ctaText: "View Case Studies",
       ctaLink: "/case-studies",
-      bgGradient: "bg-gradient-to-br from-accent via-secondary to-primary-light"
+      bgImage: "/lovable-uploads/54b123bc-1aea-4eee-824b-c0a7049731a8.png",
+      bgGradient: "bg-gradient-to-br from-accent/80 via-secondary/80 to-primary-light/80"
+    },
+    {
+      headline: "Professional Laundry Services Made Easy.",
+      subheadline: "Modern equipment and expert care for your business.",
+      ctaText: "See Our Work",
+      ctaLink: "/case-studies",
+      bgImage: "/lovable-uploads/a95f80ef-d8a5-4558-ac7c-00af08fffc15.png",
+      bgGradient: "bg-gradient-to-br from-secondary/80 via-accent/80 to-primary/80"
+    },
+    {
+      headline: "Trust Your Laundry to the Experts.",
+      subheadline: "Professional service with a personal touch.",
+      ctaText: "Contact Us",
+      ctaLink: "/contact",
+      bgImage: "/lovable-uploads/a0065a1f-6da1-455e-bf9a-4cc30ba5bdb8.png",
+      bgGradient: "bg-gradient-to-br from-primary/80 via-accent/80 to-secondary/80"
     },
     {
       headline: "Don't Just Wash, Shine Online.",
       subheadline: "Get your free GMB audit today.",
       ctaText: "Get Free Audit",
-      ctaLink: "/contact",
-      bgGradient: "bg-gradient-to-br from-secondary via-accent to-primary"
+      ctaLink: "https://wa.me/27620719960?text=Hi! I'd like to get my free GMB audit for my laundry business.",
+      bgImage: "/lovable-uploads/05e25a83-68fa-4f48-ba17-71f44bae40f0.png",
+      bgGradient: "bg-gradient-to-br from-secondary/80 via-accent/80 to-primary/80"
     }
   ];
 
@@ -111,8 +130,15 @@ const Index = () => {
             className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
               index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
             } ${slide.bgGradient} text-white african-pattern`}
+            style={{
+              backgroundImage: `url(${slide.bgImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat'
+            }}
           >
-            <div className="absolute inset-0 bg-black/20"></div>
+            <div className="absolute inset-0 bg-black/40"></div>
+            <div className={`absolute inset-0 ${slide.bgGradient}`}></div>
             <div className="relative container mx-auto px-4 h-full flex items-center justify-center text-center">
               <div className="max-w-4xl">
                 <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-6 transition-all duration-700 ${
@@ -132,7 +158,11 @@ const Index = () => {
                     index === currentSlide ? 'fade-in-up' : ''
                   }`}
                 >
-                  <Link to={slide.ctaLink}>{slide.ctaText}</Link>
+                  {slide.ctaLink.startsWith('https://wa.me/') ? (
+                    <a href={slide.ctaLink} target="_blank" rel="noopener noreferrer">{slide.ctaText}</a>
+                  ) : (
+                    <Link to={slide.ctaLink}>{slide.ctaText}</Link>
+                  )}
                 </Button>
               </div>
             </div>
@@ -343,7 +373,7 @@ const Index = () => {
               variant="secondary"
               className="bg-white text-primary hover:bg-white/90 px-8 py-4 text-lg"
             >
-              <Link to="/contact">Get Your Free Audit Now</Link>
+              <a href="https://wa.me/27620719960?text=Hi! I'd like to get my free GMB audit for my laundry business." target="_blank" rel="noopener noreferrer">Get Your Free Audit Now</a>
             </Button>
             <Button 
               asChild 
