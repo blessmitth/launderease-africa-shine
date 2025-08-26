@@ -2,39 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* LaunderEase Professional Design System - African Laundry Business Focus
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
+    /* Core Brand Colors - Based on LaunderEase Logo */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 215 85% 15%;
 
+    /* LaunderEase Navy Blue - Professional Trust */
+    --primary: 215 85% 15%;
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 215 50% 35%;
+
+    /* Fresh Green - Growth & Cleanliness */
+    --secondary: 120 35% 45%;
+    --secondary-foreground: 0 0% 98%;
+    --secondary-light: 120 40% 85%;
+
+    /* Professional Blue - Clean & Fresh */
+    --accent: 195 85% 50%;
+    --accent-foreground: 215 85% 15%;
+    --accent-light: 195 80% 90%;
+
+    /* Supporting Colors */
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 15% 45%;
+
+    /* African Earth Tones - Warm Accents */
+    --earth-warm: 35 45% 55%;
+    --earth-light: 35 35% 90%;
+
+    /* Interactive Elements */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 215 85% 15%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 85% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 215 15% 90%;
+    --input: 215 15% 94%;
+    --ring: 215 85% 15%;
+
+    /* Design System Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--accent-light) / 0.1));
+    --gradient-accent: linear-gradient(120deg, hsl(var(--accent)), hsl(var(--secondary)));
+
+    /* Shadows & Effects */
+    --shadow-soft: 0 4px 20px -2px hsl(var(--primary) / 0.1);
+    --shadow-card: 0 8px 30px -8px hsl(var(--primary) / 0.15);
+    --shadow-hero: 0 20px 60px -10px hsl(var(--primary) / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --radius: 0.5rem;
 
@@ -100,6 +127,77 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+/* LaunderEase Custom Components & Animations */
+@layer components {
+  /* Hero Button Variants */
+  .btn-hero {
+    @apply bg-gradient-to-r from-accent to-secondary text-white font-semibold px-8 py-4 rounded-lg;
+    @apply shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+  }
+
+  .btn-outline-hero {
+    @apply border-2 border-white text-white font-semibold px-8 py-4 rounded-lg;
+    @apply bg-white/10 backdrop-blur-sm hover:bg-white hover:text-primary transition-all duration-300;
+  }
+
+  /* Service Cards */
+  .service-card {
+    @apply bg-card rounded-xl p-8 shadow-lg hover:shadow-xl;
+    @apply transition-all duration-300 transform hover:-translate-y-2;
+    background: var(--gradient-card);
+  }
+
+  /* Animation Classes */
+  .fade-in-up {
+    @apply opacity-0 translate-y-8;
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .bounce-hover {
+    @apply transition-transform duration-200;
+  }
+  
+  .bounce-hover:hover {
+    @apply transform scale-110;
+    animation: gentle-bounce 0.3s ease-in-out;
+  }
+
+  /* African Pattern Accent */
+  .african-pattern {
+    background-image: 
+      radial-gradient(circle at 20% 80%, hsl(var(--earth-warm) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(var(--secondary) / 0.1) 0%, transparent 50%);
+  }
+}
+
+/* Custom Keyframe Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gentle-bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
