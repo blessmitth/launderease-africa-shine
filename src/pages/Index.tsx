@@ -26,7 +26,7 @@ const Index = () => {
       ctaText: "See Our Services",
       ctaLink: "/services",
       bgImage: "/lovable-uploads/4851d1bc-c07b-4bbb-a9bc-d886ba773967.png",
-      bgGradient: "bg-gradient-to-br from-primary/80 via-primary-light/80 to-accent/80"
+      bgGradient: "bg-gradient-to-br from-primary/30 via-primary-light/30 to-accent/30"
     },
     {
       headline: "A Professional Website That Attracts Clients.",
@@ -34,7 +34,7 @@ const Index = () => {
       ctaText: "View Case Studies",
       ctaLink: "/case-studies",
       bgImage: "/lovable-uploads/54b123bc-1aea-4eee-824b-c0a7049731a8.png",
-      bgGradient: "bg-gradient-to-br from-accent/80 via-secondary/80 to-primary-light/80"
+      bgGradient: "bg-gradient-to-br from-accent/30 via-secondary/30 to-primary-light/30"
     },
     {
       headline: "Professional Laundry Services Made Easy.",
@@ -42,7 +42,7 @@ const Index = () => {
       ctaText: "See Our Work",
       ctaLink: "/case-studies",
       bgImage: "/lovable-uploads/a95f80ef-d8a5-4558-ac7c-00af08fffc15.png",
-      bgGradient: "bg-gradient-to-br from-secondary/80 via-accent/80 to-primary/80"
+      bgGradient: "bg-gradient-to-br from-secondary/30 via-accent/30 to-primary/30"
     },
     {
       headline: "Trust Your Laundry to the Experts.",
@@ -50,7 +50,7 @@ const Index = () => {
       ctaText: "Contact Us",
       ctaLink: "/contact",
       bgImage: "/lovable-uploads/a0065a1f-6da1-455e-bf9a-4cc30ba5bdb8.png",
-      bgGradient: "bg-gradient-to-br from-primary/80 via-accent/80 to-secondary/80"
+      bgGradient: "bg-gradient-to-br from-primary/30 via-accent/30 to-secondary/30"
     },
     {
       headline: "Don't Just Wash, Shine Online.",
@@ -58,7 +58,7 @@ const Index = () => {
       ctaText: "Get Free Audit",
       ctaLink: "https://wa.me/27620719960?text=Hi! I'd like to get my free GMB audit for my laundry business.",
       bgImage: "/lovable-uploads/05e25a83-68fa-4f48-ba17-71f44bae40f0.png",
-      bgGradient: "bg-gradient-to-br from-secondary/80 via-accent/80 to-primary/80"
+      bgGradient: "bg-gradient-to-br from-secondary/30 via-accent/30 to-primary/30"
     }
   ];
 
@@ -137,7 +137,7 @@ const Index = () => {
               backgroundRepeat: 'no-repeat'
             }}
           >
-            <div className="absolute inset-0 bg-black/40"></div>
+            <div className="absolute inset-0 bg-black/20"></div>
             <div className={`absolute inset-0 ${slide.bgGradient}`}></div>
             <div className="relative container mx-auto px-4 h-full flex items-center justify-center text-center">
               <div className="max-w-4xl">
